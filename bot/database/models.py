@@ -18,7 +18,7 @@ class Task(Base):
 def init_db():
     Base.metadata.create_all(engine)
 
-def add_new_task(user_id: int, title: str, due_date: datetime):
+def add_new_task(user_id: int, title: str, due_date: date):
     session = Session()
     task = Task(user_id=user_id, title=title, due_date=due_date)
     session.add(task)
